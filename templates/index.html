@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OptiRoute</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header with Logo -->
+    <div class="header">
+        <!-- Header removed as logo is now in left-half -->
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section-container">
+        <!-- Left Half: Steps -->
+        <div class="left-half">
+            <img src="/static/logo.png" alt="OptiRoute Logo" class="logo-image">
+            <p>To optimize your Routes, follow these 3 Steps:</p>
+            <!-- Steps Section -->
+            <div class="steps">
+                <p>
+                    1. <button class="step-button" id="choose-file-button">Choose File</button>
+                    <span id="file-name">No file chosen</span>
+                </p>
+                <input type="file" id="file-input" accept=".xlsx, .xls" style="display: none;">
+                <p>2. <button class="step-button" id="upload-file-button">Upload File</button></p>
+                <p>3. <button class="step-button" id="optimize-route-button">Optimize Route</button></p>
+                <div id="loading">
+                    <div class="spinner"></div>
+                    <p>Optimizing route, please wait...</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Half: Addresses -->
+        <div class="right-half">
+            <h2>List of Addresses</h2>
+            <ul id="preview-list"></ul>
+        </div>
+    </div>
+    
+    <!-- Section 2: Comparison Page -->
+    <div id="section-2">
+        <h2>Solving TSP using different algorithms</h2>
+        <div class="algorithm-comparison">
+            <!-- Algorithm Cards -->
+            <div class="algorithm-card" id="algorithm-ortools">
+                <h3>Algorithm: GoogleOR-Solver</h3>
+                <p><strong>Distance:</strong> <span class="distance"></span> meters</p>
+                <h4>Optimized Route:</h4>
+                <ol class="route-stops"></ol>
+            </div>
+            <div class="algorithm-card" id="algorithm-christofides2opt">
+                <h3>Algorithm: Christofides-2Opt</h3>
+                <p><strong>Distance:</strong> <span class="distance"></span> meters</p>
+                <h4>Optimized Route:</h4>
+                <ol class="route-stops"></ol>
+            </div>
+            <div class="algorithm-card" id="algorithm-greedy2opt">
+                <h3>Algorithm: Greedy-2Opt</h3>
+                <p><strong>Distance:</strong> <span class="distance"></span> meters</p>
+                <h4>Optimized Route:</h4>
+                <ol class="route-stops"></ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 3: Final Recommendation -->
+    <div id="section-3">
+        <h2>Results</h2>
+        <div id="section-3-content">
+            <!-- Left Half: Best Algorithm Details -->
+            <div id="best-algorithm-container">
+                <p><strong>Best Algorithm:</strong> <span id="best-algorithm"></span></p>
+                <p><strong>Options:</strong></p>
+                <select id="algorithm-select">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <p><strong>Distance:</strong> <span id="best-distance"></span> meters</p>
+                <h4>Optimized Route:</h4>
+                <ol id="best-route-stops"></ol>
+            </div>
+            <!-- Right Half: Map and Logo -->
+            <div id="map-logo-container">
+                <div id="map-loading">
+                    <div class="spinner"></div>
+                    <p>Loading map, please wait...</p>
+                </div>
+                <iframe id="route-map" style="display: none;"></iframe>
+                <img id="logo-image" src="/static/logomap.png" alt="Logo">
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

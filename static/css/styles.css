@@ -1,0 +1,142 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+h1 {
+    font-size: 36px;
+    color: #8A8ABB;
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+.steps {
+    font-weight: bold;
+}
+.step-button {
+    background-color: #d1c4e9;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+#file-name {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #555;
+}
+.section-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: calc(100% - 100px);
+}
+.left-half, .right-half {
+    width: 48%;
+}
+.left-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.right-half {
+    background-color: #d1c4e9;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-y: auto;
+    max-height: 80vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#preview-list {
+    font-size: 16px;
+    color: #333;
+}
+.header {
+    display: none;
+}
+.logo-image {
+    width: 60%;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#section-2 {
+    display: none;
+    margin-bottom: 20px;
+}
+.algorithm-comparison {
+    display: flex;
+    justify-content: space-between;
+}
+.algorithm-card {
+    width: 32%;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+}
+.algorithm-card h3 {
+    margin-top: 0;
+}
+#section-3 {
+    display: none;
+    margin-top: 20px;
+}
+#section-3-content {
+    display: flex;
+    justify-content: space-between;
+}
+#best-algorithm-container {
+    width: 48%;
+}
+#map-logo-container {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#route-map {
+    height: 75%;
+    border: none;
+}
+#logo-image {
+    height: 25%;
+    object-fit: contain;
+    margin-top: 10px;
+}
+#loading, #map-loading {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+.spinner {
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #d1c4e9;
+    border-top: 5px solid #8A8ABB;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#algorithm-select {
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 16px;
+}
